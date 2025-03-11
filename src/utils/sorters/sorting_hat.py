@@ -1,3 +1,6 @@
+from typing import List, TypeVar
+
+
 class SortingError(Exception):
     """
     Sorting error class.
@@ -19,6 +22,8 @@ class SortingHat:
     """
     Sorting Hat class a collection of sorting algorithms.
     """
+
+    TNum = TypeVar("TNum", int, float)
 
     def __init__(self) -> None:
         self.excs_log = []
@@ -44,7 +49,7 @@ class SortingHat:
 
     def insertion_sort(
         self,
-        array: list[int | float],
+        array: List[TNum],
         length: int,
         reverse: bool = False,
         debug: bool = False,
@@ -85,3 +90,5 @@ class SortingHat:
                 print(exc)
         else:
             print("No exceptions occured.")
+
+
