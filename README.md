@@ -19,10 +19,10 @@ pip install -e .
 ```
 ### Example
 ```python
-import utils.sorters.sorting_hat as sh
+from utils.sorters.sorting_hat import SortingHat
 
 if __name__ == "__main__":
-    list_sorter: sh.SortingHat = sh.SortingHat()
+    list_sorter: SortingHat = SortingHat()
     random_array: list[int] = [6, 10, 3, 9, 5, 1, 7, 8, 4, 2]
     list_sorter.insertion_sort(array=random_array, length=len(random_array))
     print(random_array)
