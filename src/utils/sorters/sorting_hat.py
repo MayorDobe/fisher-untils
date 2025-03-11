@@ -31,6 +31,7 @@ class SortingHat:
     Args:
         array (list[int|float]): array to sort
         length (int): length of the array
+        reverse (bool): set true for reverse sorting
         debug (bool): set true allow sorting to continue if an exception occurs
 
     Returns:
@@ -42,7 +43,11 @@ class SortingHat:
     """
 
     def insertion_sort(
-        self, array: list[int | float], length: int, debug: bool = False
+        self,
+        array: list[int | float],
+        length: int,
+        reverse: bool = False,
+        debug: bool = False,
     ) -> None:
         # return if array is of length 0 or 1, we can consider it sorted
         if length <= 1:
@@ -55,8 +60,8 @@ class SortingHat:
                 key: int | float = array[i]
                 # Assign j to i - 1
                 j: int = i - 1
-                # If j is pointing to a valid index, while key is less than array[j]
-                while j >= 0 and key < array[j]:
+                # If j is pointing to a valid index
+                while j >= 0 and (key > array[j] if reverse else key < array[j]):
                     # Shift array[j] to the right
                     array[j + 1] = array[j]
                     # Decrement j
