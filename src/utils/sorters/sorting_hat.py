@@ -85,5 +85,3 @@ class SortingHat:
                 print(exc)
         else:
             print("No exceptions occured.")
-
-
