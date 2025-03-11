@@ -82,18 +82,3 @@ class SortingHat:
             print("No exceptions occured.")
 
 
-def main() -> None:
-    array: list[int | float] = [2, 5, "w", 4, 3, 8, 7, 9, 0, 6, 7]
-    length: int = len(array)
-    sorter = SortingHat()
-    print(array)
-    sorter.insertion_sort(array=array, length=length, debug=False)
-    print(array)
-
-    # print(array)
-
-    sorter.print_exceptions()
-
-
-if __name__ == "__main__":
-    main()
